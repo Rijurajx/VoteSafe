@@ -15,7 +15,7 @@ export default function SplashScreen() {
       if (isAuthenticated) {
         router.push("/dashboard")
       } else {
-        router.push("/login")
+        router.push("/landing")
       }
     }, 2000)
 
