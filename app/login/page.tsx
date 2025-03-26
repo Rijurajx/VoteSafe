@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Eye, EyeOff } from "lucide-react"
+import { Eye, EyeOff, Vote } from "lucide-react"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "@/lib/firebase" // Make sure to import your Firebase config
 import { Button } from "@/components/ui/button"
@@ -45,6 +45,10 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
+        <div className="flex justify-center">
+            <Vote className="h-12 w-12 text-primary" />
+          </div>
+
           <CardTitle className="text-2xl font-bold">Welcome to VoteSafe</CardTitle>
           <CardDescription>Login to continue</CardDescription>
         </CardHeader>
