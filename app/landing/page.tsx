@@ -729,8 +729,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                   </TabsContent>
-                  // Similarly, update the voting and results tabs to ensure their content is visible // For the voting
-                  tab:
+        
                   <TabsContent value="voting" className="rounded-xl border bg-card p-6 shadow-sm">
                     <div className="grid gap-8 md:grid-cols-2">
                       <div>
@@ -790,7 +789,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                   </TabsContent>
-                  // For the results tab:
+                  
                   <TabsContent value="results" className="rounded-xl border bg-card p-6 shadow-sm">
                     <div className="grid gap-8 md:grid-cols-2">
                       <div>
