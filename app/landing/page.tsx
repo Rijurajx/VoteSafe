@@ -130,9 +130,8 @@ export default function LandingPage() {
     <div className="flex min-h-screen flex-col">
       {/* Navigation */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
-          scrollY > 50 ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
-        }`}
+        className={`sticky top-0 z-40 transition-all duration-300 ${scrollY > 50 ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"
+          }`}
       >
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
@@ -668,43 +667,34 @@ export default function LandingPage() {
                   transition={{ duration: 0.3 }}
                 >
                   <TabsContent value="verification" className="rounded-xl border bg-card p-6 shadow-sm">
-                    <div className="grid gap-8 md:grid-cols-2">
-                      <div>
+                    <div className="flex justify-center">
+                      <div className="max-w-xl text-center">
                         <h3 className="mb-4 text-2xl font-medium">Secure Identity Verification</h3>
                         <div className="space-y-4">
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
+                          {[
+                            {
+                              title: "Government ID Verification",
+                              description: "Upload your government-issued ID for secure verification",
+                            },
+                            {
+                              title: "Facial Recognition",
+                              description: "Complete a quick facial scan to confirm your identity",
+                            },
+                            {
+                              title: "AI-Powered Verification",
+                              description: "Advanced AI algorithms ensure your identity is securely verified",
+                            },
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-3">
+                              <div className="mt-1 rounded-full bg-primary/10 p-1">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                              </div>
+                              <div className="text-left">
+                                <h4 className="font-medium">{item.title}</h4>
+                                <p className="text-sm text-muted-foreground">{item.description}</p>
+                              </div>
                             </div>
-                            <div>
-                              <h4 className="font-medium">Government ID Verification</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Upload your government-issued ID for secure verification
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <h4 className="font-medium">Facial Recognition</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Complete a quick facial scan to confirm your identity
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <h4 className="font-medium">AI-Powered Verification</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Advanced AI algorithms ensure your identity is securely verified
-                              </p>
-                            </div>
-                          </div>
+                          ))}
                         </div>
                         <Button
                           className="mt-6 group relative overflow-hidden"
@@ -717,59 +707,43 @@ export default function LandingPage() {
                           <span className="absolute inset-0 bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                         </Button>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <div className="overflow-hidden rounded-lg border shadow-md relative group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                          <img
-                            src="/id-verification.jpg"
-                            alt="Verification Process"
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        </div>
-                      </div>
                     </div>
                   </TabsContent>
-        
+
                   <TabsContent value="voting" className="rounded-xl border bg-card p-6 shadow-sm">
-                    <div className="grid gap-8 md:grid-cols-2">
-                      <div>
+                    <div className="flex justify-center">
+                      <div className="max-w-xl text-center">
                         <h3 className="mb-4 text-2xl font-medium">Flexible Voting Options</h3>
                         <div className="space-y-4">
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
+                          {[
+                            {
+                              title: "Online Voting",
+                              description: "Vote securely from anywhere using your mobile device or computer",
+                            },
+                            {
+                              title: "In-Person Voting",
+                              description: "Find the nearest polling station with real-time waiting times",
+                            },
+                            {
+                              title: "Secure Ballot Casting",
+                              description: "Your vote is encrypted and anonymously recorded with advanced security",
+                            },
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-3">
+                              <div className="mt-1 rounded-full bg-primary/10 p-1">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                              </div>
+                              <div className="text-left">
+                                <h4 className="font-medium">{item.title}</h4>
+                                <p className="text-sm text-muted-foreground">{item.description}</p>
+                              </div>
                             </div>
-                            <div>
-                              <h4 className="font-medium">Online Voting</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Vote securely from anywhere using your mobile device or computer
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <h4 className="font-medium">In-Person Voting</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Find the nearest polling station with real-time waiting times
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <h4 className="font-medium">Secure Ballot Casting</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Your vote is encrypted and anonymously recorded with advanced security
-                              </p>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <Button className="mt-6 group relative overflow-hidden" onClick={() => router.push("/login")}>
+                        <Button
+                          className="mt-6 group relative overflow-hidden"
+                          onClick={() => router.push("/login")}
+                        >
                           <span className="relative z-10 flex items-center">
                             Access Elections
                             <ChevronRight className="ml-2 h-4 w-4" />
@@ -777,59 +751,43 @@ export default function LandingPage() {
                           <span className="absolute inset-0 bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                         </Button>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <div className="overflow-hidden rounded-lg border shadow-md relative group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                          <img
-                            src="/online-voting.jpg"
-                            alt="Voting Process"
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        </div>
-                      </div>
                     </div>
                   </TabsContent>
-                  
+
                   <TabsContent value="results" className="rounded-xl border bg-card p-6 shadow-sm">
-                    <div className="grid gap-8 md:grid-cols-2">
-                      <div>
+                    <div className="flex justify-center">
+                      <div className="max-w-xl text-center">
                         <h3 className="mb-4 text-2xl font-medium">Transparent Results</h3>
                         <div className="space-y-4">
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
+                          {[
+                            {
+                              title: "Real-Time Results",
+                              description: "View election results as they come in with live updates",
+                            },
+                            {
+                              title: "Secure Verification",
+                              description: "All results are securely verified for complete transparency",
+                            },
+                            {
+                              title: "Data Visualization",
+                              description: "Interactive charts and graphs make results easy to understand",
+                            },
+                          ].map((item, i) => (
+                            <div key={i} className="flex items-start gap-3">
+                              <div className="mt-1 rounded-full bg-primary/10 p-1">
+                                <CheckCircle2 className="h-4 w-4 text-primary" />
+                              </div>
+                              <div className="text-left">
+                                <h4 className="font-medium">{item.title}</h4>
+                                <p className="text-sm text-muted-foreground">{item.description}</p>
+                              </div>
                             </div>
-                            <div>
-                              <h4 className="font-medium">Real-Time Results</h4>
-                              <p className="text-sm text-muted-foreground">
-                                View election results as they come in with live updates
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <h4 className="font-medium">Secure Verification</h4>
-                              <p className="text-sm text-muted-foreground">
-                                All results are securely verified for complete transparency
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <div className="mt-1 rounded-full bg-primary/10 p-1">
-                              <CheckCircle2 className="h-4 w-4 text-primary" />
-                            </div>
-                            <div>
-                              <h4 className="font-medium">Data Visualization</h4>
-                              <p className="text-sm text-muted-foreground">
-                                Interactive charts and graphs make results easy to understand
-                              </p>
-                            </div>
-                          </div>
+                          ))}
                         </div>
-                        <Button className="mt-6 group relative overflow-hidden" onClick={() => router.push("/login")}>
+                        <Button
+                          className="mt-6 group relative overflow-hidden"
+                          onClick={() => router.push("/login")}
+                        >
                           <span className="relative z-10 flex items-center">
                             View Results
                             <ChevronRight className="ml-2 h-4 w-4" />
@@ -837,18 +795,9 @@ export default function LandingPage() {
                           <span className="absolute inset-0 bg-primary/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                         </Button>
                       </div>
-                      <div className="flex items-center justify-center">
-                        <div className="overflow-hidden rounded-lg border shadow-md relative group">
-                          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                          <img
-                            src="/election-results.jpg"
-                            alt="Results Dashboard"
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        </div>
-                      </div>
                     </div>
                   </TabsContent>
+
                 </motion.div>
               </AnimatePresence>
             </Tabs>
@@ -977,7 +926,7 @@ export default function LandingPage() {
               <div className="overflow-hidden rounded-lg shadow-md relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img
-                  src="/security-visualization.jpg"
+                  src="https://media.kasperskydaily.com/wp-content/uploads/sites/92/2020/10/16044143/M187_Digital-voting-header.png"
                   alt="Security Visualization"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -987,94 +936,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="bg-muted/30 py-20 overflow-hidden" ref={testimonialsRef}>
-        <div className="container">
-          <motion.div
-            variants={fadeIn}
-            initial="hidden"
-            animate={testimonialsInView ? "visible" : "hidden"}
-            className="mx-auto mb-16 max-w-2xl text-center"
-          >
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-              What <span className="text-primary">Users Say</span>
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Hear from people who have experienced the security and convenience of VoteSafe.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate={testimonialsInView ? "visible" : "hidden"}
-            className="grid gap-8 md:grid-cols-3"
-          >
-            {/* Testimonial 1 */}
-            <motion.div variants={scaleUp}>
-              <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-300">
-                      <img src="/testimonial-1.jpg" alt="Sarah J." className="h-full w-full object-cover" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Sarah J.</h3>
-                      <p className="text-sm text-muted-foreground">First-time voter</p>
-                    </div>
-                  </div>
-                  <p className="italic text-muted-foreground">
-                    "The verification process was so simple! I was worried it would be complicated, but VoteSafe made it
-                    easy to verify my identity and cast my vote securely."
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Testimonial 2 */}
-            <motion.div variants={scaleUp}>
-              <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-300">
-                      <img src="/testimonial-2.jpg" alt="Michael T." className="h-full w-full object-cover" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Michael T.</h3>
-                      <p className="text-sm text-muted-foreground">Election official</p>
-                    </div>
-                  </div>
-                  <p className="italic text-muted-foreground">
-                    "VoteSafe has revolutionized how we manage elections. The security features give us confidence in
-                    the results, and voters appreciate the convenience."
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Testimonial 3 */}
-            <motion.div variants={scaleUp}>
-              <Card className="border-none shadow-md hover:shadow-lg transition-all duration-300 group hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-primary/20 group-hover:ring-primary/50 transition-all duration-300">
-                      <img src="/testimonial-3.jpg" alt="Elena R." className="h-full w-full object-cover" />
-                    </div>
-                    <div>
-                      <h3 className="font-medium">Elena R.</h3>
-                      <p className="text-sm text-muted-foreground">Remote voter</p>
-                    </div>
-                  </div>
-                  <p className="italic text-muted-foreground">
-                    "Being able to vote securely while traveling was amazing. The mobile verification worked perfectly,
-                    and I felt confident my vote was counted."
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* Floating Action Button (Mobile Only) */}
       <div className="fixed bottom-6 right-6 z-50 md:hidden">
